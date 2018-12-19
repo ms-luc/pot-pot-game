@@ -66,13 +66,13 @@
 
         var keys = {
 
-            98690159568: "Полинка",
+            98696442364: "Полинка",
             98699583762: "Миша",
-            98680735374: "Илья",
-            98687018170: "Люба",
-            98696442364: "Вова",
-            98693300966: "Арсений",
-            98683876772: "Катя"
+            98690159568: "Илья",
+            98683876772: "Люба",
+            98680735374: "Вова",
+            98687018170: "Арсений",
+            98693300966: "Катя"
 
         };
 
@@ -86,7 +86,8 @@
 
             window.setTimeout(setDotOne, 8000);
 
-            console.log(keys[password])
+            console.log( "you are " + keys[password])
+            console.log( "you got " + people[ decode( password ) ]);
 
         })
 
@@ -112,22 +113,24 @@
         }
 
         function setName() {
-            $('#name').text(keys[password])
+
+            $('#name').text( people[ decode( password ) ] )
+
         }
 
 
 
-        // var people = [
+        var people = [
 
-        //     "Полинка",
-        //     "Миша",
-        //     "Илья",
-        //     "Люба",
-        //     "Вова",
-        //     "Арсений",
-        //     "Катя"
+            "Полинка",
+            "Миша",
+            "Илья",
+            "Люба",
+            "Вова",
+            "Арсений",
+            "Катя"
 
-        // ]
+        ]
 
         // var results = {
 
@@ -182,7 +185,7 @@
 
         //     }
 
-        //     // console.log(results)
+        //     console.log(results)
 
         // }
         // generateSantas()
@@ -193,21 +196,21 @@
         //         results[person] = people.indexOf( results[person] )
         //     }
 
-        //     // console.log(results)
-
-        //     for ( var person in results) {
-        //         results[person] = encode( results[person] )
-        //     }
-
-        //     console.log("encoded ")
         //     console.log(results)
 
+        //     console.log("encoded ")
+
         //     for ( var person in results) {
-        //         results[person] = decode( results[person] )
+        //         //results[person] = encode( results[person] )
+
+        //         var encoded = encode( results[person] )
+        //         console.log( person + " | " + encoded ) 
+        //         console.log( person + " | " + decode( encoded ) ) 
+
         //     }
 
-        //     // console.log("decoded ")
-        //     // console.log(results)
+            
+    
 
         // }
         // generateCodes()
@@ -216,10 +219,10 @@
         //     return (input + 31413) * 3141398
         // }
 
-        // function decode( input){
-        //     // return ((input * 32) - 15) * 314 - 400
-        //     return (input / 3141398 ) - 31413
-        // }
+        function decode( input){
+            // return ((input * 32) - 15) * 314 - 400
+            return (input / 3141398 ) - 31413
+        }
     </script>
 </body>
 
