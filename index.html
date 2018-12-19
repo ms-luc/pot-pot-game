@@ -1,19 +1,212 @@
-
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Secret Santa ;)</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <title>Secret Santa ;)</title>
 </head>
 
 <body>
 
-  <p>Hello, world!</p>
+    <br>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="js/script.js"></script>
+    <form class="form-inline">
+
+
+        <div class="form-group mx-sm-3 mb-2">
+            <input class="form-control" placeholder="Password" id="password">
+        </div>
+        <button id="submit" type="button" class="btn btn-primary mb-2">Submit</button>
+
+
+
+
+    </form>
+
+    <form class="form-inline">
+
+        <div class="form-group mx-sm-3 mb-2">
+            <button type="button" class="btn btn-primary">
+                You got: <span class="badge badge-light" id="name"></span>
+            </button>
+        </div>
+
+    </form>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+
+        var keys = {
+
+            1 : "Полинка",
+            2 :"Миша",
+            3 : "Илья",
+            4 : "Люба",
+            5 : "Вова",
+            6 : "Арсений",
+            7 : "Катя"
+
+        };
+
+        var password = ""
+
+        $('#submit').on('click', function (e) {
+
+            password = $('#password').val()
+
+            $('#name').text("POT-POT    ")
+
+            window.setTimeout(setDotOne,8000);
+
+            console.log( keys[password] )
+
+        })
+
+        function setDotOne(){
+
+            $('#name').text("POT-POT .")
+            window.setTimeout(setDotTwo,1000);
+            
+        }
+        function setDotTwo(){
+
+            $('#name').text("POT-POT ..")
+            window.setTimeout(setDotThree,1000);
+            
+        }
+        function setDotThree(){
+            
+            $('#name').text("POT-POT ...")
+            window.setTimeout(setName,1000);
+            
+        }
+        function setName(){
+            $('#name').text( keys[password] )
+        }
+
+        
+
+        // var people = [
+
+        //     "Полинка",
+        //     "Миша",
+        //     "Илья",
+        //     "Люба",
+        //     "Вова",
+        //     "Арсений",
+        //     "Катя"
+
+        // ]
+
+        // var results = {
+
+        //     "Полинка": "",
+        //     "Миша": "",
+        //     "Илья": "",
+        //     "Люба": "",
+        //     "Вова": "",
+        //     "Арсений": "",
+        //     "Катя": ""
+
+        // }
+
+
+        // function generateSantas() {
+
+
+        //     available = people.slice()
+
+        //     // console.log(people)
+        //     // console.log(available)
+
+        //     for (person of people) {
+
+        //         correct = false
+        //         selected = 0
+
+        //         while (correct == false) {
+
+        //             // person randomly selected
+        //             selected = Math.floor((Math.random() * (available.length - 1)));
+
+        //             chosen_person = available[selected]
+
+        //             results[person] = chosen_person
+
+        //             available.splice(selected, 1);
+
+        //             if (results[person] == person || results["Люба"] == "Вова" || results["Вова"] == "Люба" || results[
+        //                     "Полинка"] == "Миша" || results["Миша"] == "Полинка") {
+
+        //                 console.log("Incorrect key - " + results[person] + " | " + person)
+
+        //                 available.push(chosen_person)
+
+        //             } else {
+        //                 correct = true
+
+        //             }
+
+        //         }
+
+        //     }
+
+        //     // console.log(results)
+
+        // }
+        // generateSantas()
+
+        // function generateCodes() {
+
+        //     for ( var person in results) {
+        //         results[person] = people.indexOf( results[person] )
+        //     }
+
+        //     // console.log(results)
+
+        //     for ( var person in results) {
+        //         results[person] = encode( results[person] )
+        //     }
+
+        //     console.log("encoded ")
+        //     console.log(results)
+
+        //     for ( var person in results) {
+        //         results[person] = decode( results[person] )
+        //     }
+
+        //     // console.log("decoded ")
+        //     // console.log(results)
+
+        // }
+        // generateCodes()
+
+        // function encode( input ){
+        //     return (input + 31413) * 3141398
+        // }
+
+        // function decode( input){
+        //     // return ((input * 32) - 15) * 314 - 400
+        //     return (input / 3141398 ) - 31413
+        // }
+
+    </script>
 </body>
 
 </html>
