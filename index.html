@@ -52,15 +52,27 @@
         crossorigin="anonymous"></script>
     <script>
 
+        // var keys = {
+
+        //     1: "Полинка",
+        //     2: "Миша",
+        //     3: "Илья",
+        //     4: "Люба",
+        //     5: "Вова",
+        //     6: "Арсений",
+        //     7: "Катя"
+
+        // };
+
         var keys = {
 
-            1 : "Полинка",
-            2 :"Миша",
-            3 : "Илья",
-            4 : "Люба",
-            5 : "Вова",
-            6 : "Арсений",
-            7 : "Катя"
+            98690159568: "Полинка",
+            98699583762: "Миша",
+            98680735374: "Илья",
+            98687018170: "Люба",
+            98696442364: "Вова",
+            98693300966: "Арсений",
+            98683876772: "Катя"
 
         };
 
@@ -72,35 +84,38 @@
 
             $('#name').text("POT-POT    ")
 
-            window.setTimeout(setDotOne,8000);
+            window.setTimeout(setDotOne, 8000);
 
-            console.log( keys[password] )
+            console.log(keys[password])
 
         })
 
-        function setDotOne(){
+        function setDotOne() {
 
             $('#name').text("POT-POT .")
-            window.setTimeout(setDotTwo,1000);
-            
+            window.setTimeout(setDotTwo, 1000);
+
         }
-        function setDotTwo(){
+
+        function setDotTwo() {
 
             $('#name').text("POT-POT ..")
-            window.setTimeout(setDotThree,1000);
-            
-        }
-        function setDotThree(){
-            
-            $('#name').text("POT-POT ...")
-            window.setTimeout(setName,1000);
-            
-        }
-        function setName(){
-            $('#name').text( keys[password] )
+            window.setTimeout(setDotThree, 1000);
+
         }
 
-        
+        function setDotThree() {
+
+            $('#name').text("POT-POT ...")
+            window.setTimeout(setName, 1000);
+
+        }
+
+        function setName() {
+            $('#name').text(keys[password])
+        }
+
+
 
         // var people = [
 
@@ -205,7 +220,6 @@
         //     // return ((input * 32) - 15) * 314 - 400
         //     return (input / 3141398 ) - 31413
         // }
-
     </script>
 </body>
 
